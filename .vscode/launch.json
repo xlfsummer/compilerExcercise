@@ -21,6 +21,12 @@
             "runtimeArgs": [
                 "--experimental-modules"
             ],
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "定义式解析",
+            "program": "${workspaceFolder}\\predictParse\\prefixParseByDefinition.js",
         }
     ]
 }

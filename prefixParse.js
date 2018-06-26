@@ -1,6 +1,6 @@
 // import PNode from "./parseTree.mjs";
 
-const str = "- + 9 7 4".replace(/\s/g,'');
+const str = "- + 9 7 - 8 2".replace(/\s/g,'');
 
 let i = 0;
 let result = parseExpr.call(null);
