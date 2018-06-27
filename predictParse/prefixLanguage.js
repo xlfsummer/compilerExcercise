@@ -18,22 +18,32 @@ let grammars = [
   {
     name: "plus expression",
     head: expr,
-    body: [new T("+"), expr, expr]
+    body: [new T("+"), expr, expr],
+    calc: function(){
+      return this.body[1].calc() + this.body[2].calc();
+    }
   },
   {
     name: "minus expression",
     head: expr,
-    body: [new T("-"), expr, expr]
+    body: [new T("-"), expr, expr],
+    calc: function(){
+      return this.body[1].calc() - this.body[2].calc();
+    }
   },
   {
     name: "digit expression",
     head: expr,
-    body: [a]
+    body: [a],
+    calc: function(){
+      return this.body[0].calc();
+    }
   },
-  ...[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => ({
+  ...[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => ({ 
     name: "digit " + n,
     head: a,
-    body: [new T(n + "")]
+    body: [new T(n + "")],
+    calc: () => n
   }))
 ];
 

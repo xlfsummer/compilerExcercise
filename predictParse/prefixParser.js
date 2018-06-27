@@ -16,7 +16,8 @@ module.exports = function parse(language, inputs) {
             type: "nonterminal",
             head: production.head.name,
             name: production.name,
-            body: []
+            body: [],
+            calc: production.calc,
         }
 
         for (let si = 0, sl = production.body.length; si < sl; si++) {
